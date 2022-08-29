@@ -10,7 +10,5 @@ datasources:
     isDefault: true
     jsonData:
       derivedFields:
-        - datasourceUid: stdout
-          matcherRegex: trace_id=(\\w+)
+        - matcherRegex: "trace_id":\s*"(\w+)"
           name: TraceID
-          url: "$${__value.raw}"
