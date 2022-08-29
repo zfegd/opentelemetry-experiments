@@ -10,5 +10,9 @@ datasources:
     isDefault: true
     jsonData:
       derivedFields:
-        - matcherRegex: "trace_id":\s*"(\w+)"
+        - datasourceUid: Loki
+          matcherRegex: "\"trace_id\":\\s*\"(\\w+)\""
           name: TraceID
+          url: "$${__value.raw}"
+
+# filter we want is "trace_id":\s*"(\w+)"
